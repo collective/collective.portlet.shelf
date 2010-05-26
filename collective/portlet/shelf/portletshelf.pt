@@ -1,0 +1,44 @@
+<dl class="portlet portletShelfWrapper"
+    tal:condition="view/results"
+    i18n:domain="collective.portlet.shelf">
+  <dd class="shelf portletItem">
+    <tal:carousel repeat="topic view/collections">
+       <div tal:attributes="class string: category_section shelfc-${topic/id};
+                            style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')">
+           <div class="shelfScrollable">           
+             <div class='items'
+                  tal:define="use_view_action site_properties/typesUseViewActionInListings|python:();
+                              items topic/content">
+               <tal:block repeat="item items"
+                          tal:condition="items">
+                 <div class="scrollItem visualIEFloatFix">
+                   <div class="scrollItemPadding"> 
+                     <div tal:replace="structure python: view.widget(item)" />
+                   </div>
+                   <div class="visualClear"></div>
+                 </div>
+               </tal:block>
+            </div>
+          </div>
+          <div class="scrollNaviWrapper">
+            <a class="prev browse left" title="Previous item"
+              i18n:attributes="title label_previous_item"><span i18n:translate="label_previous_item">Previous item</span></a>
+            <!-- wrapper for navigator elements --> 
+            <div class="scrollNavi"><!-- --></div>
+            <a class="next browse right" title="Next item"
+               i18n:attributes="title label_next_item"><span i18n:translate="label_next_item">Next item</span></a>
+          </div>
+        </div>
+    </tal:carousel>
+    <ul class="filterNav">
+      <tal:catlist repeat="topic view/collections">
+        <li tal:define="title topic/title">
+          <a class="subCategory"
+             tal:content="title"
+             tal:attributes="class string: ${attrs/class} shelfc-${topic/id};
+                             title title">Category</a>
+        </li>
+      </tal:catlist>
+    </ul>
+  </dd>
+</dl>

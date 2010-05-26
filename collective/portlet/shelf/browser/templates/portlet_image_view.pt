@@ -1,0 +1,11 @@
+<tal:block define="item_url context/absolute_url;
+                   item_type context/portal_type;
+                   use_view_action site_properties/typesUseViewActionInListings|python:();
+                   item_title_or_id context/pretty_title_or_id">
+                
+  <a href="#"
+     tal:attributes="href python:(item_type in use_view_action) and item_url+'/view' or item_url;">
+    <img src="" alt=""
+         tal:replace="structure python: path('nocall:context/tag')(scale='thumb', css_class='tileImage')" />
+  </a>
+</tal:block>

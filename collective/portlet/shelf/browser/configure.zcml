@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.carousel">
+    
+  <browser:page
+    name="portlet_shelf_item_view"
+    for="Products.ATContentTypes.interface.IATImage"
+    template="templates/portlet_image_view.pt"
+    permission="zope2.View"
+    />  
+
+  <browser:page
+    name="portlet_shelf_item_view"
+    for="Products.ATContentTypes.interface.IATContentType"
+    template="templates/portlet_default_view.pt"
+    permission="zope2.View"
+    />  
+
+  <browser:resource
+    name="shelf.js"
+    file="resources/shelf.js" />
+  
+  <browser:resource
+    name="jquery.tools.min.js"
+    file="resources/jquery.tools.min.js" />
+    
+</configure>

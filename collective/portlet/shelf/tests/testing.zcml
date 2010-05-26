@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.portlet.shelf">
+
+    <!-- include package="." file="configure.zcml" /-->
+
+    <!-- General views for carousel viewlet -->
+    <browser:page
+      name="portlet_shelf_item_view"                  
+      for="Products.ATContentTypes.interface.IATContentType"
+      template="portlet_default_view.pt"
+      permission="zope2.View"
+      />
+
+    <browser:page
+      name="portlet_shelf_item_view"                  
+      for="Products.ATContentTypes.interface.IATImage"
+      template="portlet_image_view.pt"
+      permission="zope2.View"
+      /> 
+
+</configure>

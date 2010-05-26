@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="collective.portlet.shelf">
+
+    <five:registerPackage package="." initialize=".initialize" />
+    <include package=".browser" />
+
+    <cmf:registerDirectory name="portlet_shelf"/>
+
+    <genericsetup:registerProfile
+       name="default"
+       title="Portlet Shelf"
+       directory="profiles/default"
+       description=""
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+
+     <plone:portlet
+         name="collective.portlet.shelf.PortletShelf"
+         interface=".portletshelf.IPortletShelf"
+         assignment=".portletshelf.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".portletshelf.Renderer"
+         addview=".portletshelf.AddForm"
+         editview=".portletshelf.EditForm"
+         />
+
+</configure>
