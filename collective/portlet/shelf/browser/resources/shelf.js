@@ -49,4 +49,4 @@ jq(document).ready(function () {
         clickable: false,
         loop: true
     }).navigator({indexed: true, navi: '.scrollNavi'});
-})
+});
