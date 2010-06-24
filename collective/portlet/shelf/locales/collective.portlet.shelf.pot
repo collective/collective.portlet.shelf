@@ -1,0 +1,41 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-24 12:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.portlet.shelf\n"
+
+#: ../portletshelf.py:88
+msgid "Add Shelf Portlet"
+msgstr ""
+
+#: ../portletshelf.py:101
+msgid "Edit Shelf Portlet"
+msgstr ""
+
+#: ../portletshelf.py:89
+msgid "This portlet display a scrollable items from Collection."
+msgstr ""
+
+#. Default: "Next item"
+#: ../portletshelf.pt:28
+msgid "label_next_item"
+msgstr ""
+
+#. Default: "Previous item"
+#: ../portletshelf.pt:24
+msgid "label_previous_item"
+msgstr ""
+
