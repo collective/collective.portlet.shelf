@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<portlets>
+<portlets
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="collective.portlet.shelf">
 
  <!-- Portlet type registrations -->
 
@@ -7,6 +9,7 @@
    addview="collective.portlet.shelf.PortletShelf"
    title="Portlet Shelf"
    description=""
+   i18n:attributes="title; description"
    />
 
 </portlets>

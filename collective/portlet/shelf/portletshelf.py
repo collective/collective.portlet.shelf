@@ -32,7 +32,7 @@ class Assignment(base.Assignment):
 
     @property
     def title(self):
-        return self.header or u"Portlet Shelf"
+        return self.header or _(u"Portlet Shelf")
 
 
 class Renderer(base.Renderer):
@@ -66,7 +66,7 @@ class Renderer(base.Renderer):
 
         #add main collection
         collections.append({'id':'main',
-                            'title':'All',
+                            'title':_('All'),
                             'content':self.results()})
 
         return collections
