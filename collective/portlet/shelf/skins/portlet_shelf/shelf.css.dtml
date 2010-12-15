@@ -40,7 +40,6 @@ div.shelfScrollable div.items {
     the most. */ 
 .shelfScrollable .items .scrollItem { 
     float:left; 
-    width: &dtml-itemWidth;;
     border: none;
     padding: 0;
     margin: 0;
@@ -50,6 +49,8 @@ div.shelfScrollable div.items {
    on .tileItem to avoid messing up the width of an item. */
 div.shelfScrollable div.items div.scrollItemPadding {
     margin: 1.5em 1em;
+    float: left;
+    width: &dtml-itemWidth;;
 }
 
 /* @end */
@@ -120,7 +121,7 @@ dl.portletShelfWrapper {
 	border: none;
 }
 dl.portletShelfWrapper .shelf{
-    width: 99%;
+    width:auto;
     padding: 0;
     margin-bottom: 0;
 }

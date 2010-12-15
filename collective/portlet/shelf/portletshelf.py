@@ -23,12 +23,31 @@ class IPortletShelf(base.ICollectionPortlet):
     portlet that based on plone collection portlet.
 
     """
+    page_size = schema.Int(
+        title=_(u"Page Size"),
+        description=_(u"Specify the maximum number of items to show in the "
+                      u"one page."),
+        required=False)
+
 
 class Assignment(base.Assignment):
     """Portlet shelf assignment.
 
     """
     implements(IPortletShelf)
+    
+    show_more = False
+    page_size = 1
+    
+    def __init__(self, header=u"", target_collection=None, limit=None,
+                 random=False, show_more=False, show_dates=False, page_size = 1):
+        self.header = header
+        self.target_collection = target_collection
+        self.limit = limit
+        self.random = random
+        self.show_more = show_more
+        self.show_dates = show_dates
+        self.page_size = page_size
 
     @property
     def title(self):
@@ -83,7 +102,7 @@ class AddForm(base.AddForm):
     """
     form_fields = form.Fields(IPortletShelf)
     form_fields['target_collection'].custom_widget = UberSelectionWidget
-    form_fields = form_fields.omit('random', 'show_more', 'show_dates')
+    form_fields = form_fields.omit('show_dates')
 
     label = _(u"Add Shelf Portlet")
     description = _(u"This portlet display a scrollable items from Collection.")
@@ -96,7 +115,7 @@ class EditForm(base.EditForm):
 """
     form_fields = form.Fields(IPortletShelf)
     form_fields['target_collection'].custom_widget = UberSelectionWidget
-    form_fields = form_fields.omit('random', 'show_more', 'show_dates')
+    form_fields = form_fields.omit('show_dates')
 
     label = _(u"Edit Shelf Portlet")
     description = _(u"This portlet display a scrollable items from Collection.")

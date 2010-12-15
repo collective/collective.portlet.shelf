@@ -40,9 +40,9 @@ jq(document).ready(function () {
 
                 }
            }; 
-        });          
+        });
     };
-        
+
     initControls();
     var api = jq("div.shelfScrollable").scrollable({
         size: 1,
