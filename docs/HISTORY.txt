@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.1 (2010-12-15)
+----------------
+
+* added page size parameter for the portlet
+* all features of plone.portlet.collection are supported
+
 1.0 (xxxx-xx-xx)
 ----------------
 
