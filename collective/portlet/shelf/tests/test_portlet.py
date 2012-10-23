@@ -97,6 +97,7 @@ class TestRenderer(TestCase):
                                IPortletRenderer)
 
     def test_render(self):
+        zcml.load_config('tests/testing.zcml', collective.portlet.shelf)
         r = self.renderer(context=self.portal,
                           assignment=portletshelf.Assignment(header='shelf',
                           target_collection='/'.join(self.folder.collection.getPhysicalPath()[2:])))

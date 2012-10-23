@@ -46,7 +46,9 @@ class TestCase(ptc.PloneTestCase):
 
         # add  some objects
         self.folder.invokeFactory('Document', 'test_document')
+        self.folder.test_document.reindexObject()
         self.folder.invokeFactory('Image', 'test_image')          
+        self.folder.test_image.reindexObject()
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
     """Test case class used for functional (doc-)tests
