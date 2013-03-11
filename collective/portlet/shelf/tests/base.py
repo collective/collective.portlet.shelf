@@ -38,11 +38,20 @@ class TestCase(ptc.PloneTestCase):
     """
     def afterSetUp(self):
         self.setRoles(('Manager', ))
-        self.folder.invokeFactory('Topic', 'collection')
-        collection = getattr(self.folder, 'collection')
-        
-        crit = self.folder.collection.addCriterion('portal_type', 'ATSimpleStringCriterion')
-        crit.setValue(['Document', 'Image'])
+        try:
+            self.folder.invokeFactory('Collection', 'collection')
+            collection = getattr(self.folder, 'collection')
+            query = [{
+                'i': 'Type',
+                'o': 'plone.app.querystring.operation.string.is',
+                'v': ['Document', 'Image'],
+            }]
+            collection.setQuery(query)
+        except:
+            self.folder.invokeFactory('Topic', 'collection')
+            collection = getattr(self.folder, 'collection')
+            crit = self.folder.collection.addCriterion('portal_type', 'ATSimpleStringCriterion')
+            crit.setValue(['Document', 'Image'])
 
         # add  some objects
         self.folder.invokeFactory('Document', 'test_document')
