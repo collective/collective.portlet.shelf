@@ -13,22 +13,21 @@
     <cmf:registerDirectory name="portlet_shelf"/>
 
     <genericsetup:registerProfile
-       name="default"
-       title="Portlet Shelf"
-       directory="profiles/default"
-       description=""
-       provides="Products.GenericSetup.interfaces.EXTENSION"
-       />
+      name="default"
+      title="Portlet Shelf"
+      directory="profiles/default"
+      description=""
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
-     <plone:portlet
-         name="collective.portlet.shelf.PortletShelf"
-         interface=".portletshelf.IPortletShelf"
-         assignment=".portletshelf.Assignment"
-         view_permission="zope2.View"
-         edit_permission="cmf.ManagePortal"
-         renderer=".portletshelf.Renderer"
-         addview=".portletshelf.AddForm"
-         editview=".portletshelf.EditForm"
-         />
+    <include package="plone.app.portlets" />
+    <plone:portlet
+      name="collective.portlet.shelf.PortletShelf"
+      interface=".portletshelf.IPortletShelf"
+      assignment=".portletshelf.Assignment"
+      renderer=".portletshelf.Renderer"
+      addview=".portletshelf.AddForm"
+      editview=".portletshelf.EditForm"
+      />
 
 </configure>
