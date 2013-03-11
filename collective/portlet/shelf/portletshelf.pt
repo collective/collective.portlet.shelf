@@ -1,15 +1,12 @@
 <dl class="portlet portletShelfWrapper"
     tal:condition="view/results"
     i18n:domain="collective.portlet.shelf">
-  <dt class="portletHeader" tal:condition="view/data/show_more">
+  <dt class="portletHeader">
         <span class="portletTopLeft"><!-- --></span>
         <span class="portletItemHeader" tal:content="view/data/header"><!-- --></span>
-        <a tal:attributes="href view/collection_url" i18n:translate="more_url">
-             More&hellip;
-        </a>
         <span class="portletTopRight"><!-- --></span>
   </dt>
-  <dd class="shelf portletItem">
+  <dd class="portletItem">
     <tal:carousel repeat="topic view/collections">
        <div tal:attributes="class string: category_section shelfc-${topic/id};
                             style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')">
@@ -32,15 +29,16 @@
             </div>
           </div>
           <div class="scrollNaviWrapper">
-            <a class="prev browse left" title="Previous item"
-              i18n:attributes="title label_previous_item"><span i18n:translate="label_previous_item">Previous item</span></a>
+            <a class="prev" title="Previous item"
+               i18n:attributes="title label_previous_item"><span i18n:translate="label_previous_item">Previous item</span></a>
+            <a class="next" title="Next item"
+               i18n:attributes="title label_next_item"><span i18n:translate="label_next_item">Next item</span></a>
             <!-- wrapper for navigator elements --> 
             <div class="scrollNavi"><!-- --></div>
-            <a class="next browse right" title="Next item"
-               i18n:attributes="title label_next_item"><span i18n:translate="label_next_item">Next item</span></a>
           </div>
         </div>
     </tal:carousel>
+
     <ul class="filterNav" tal:condition="python:len(view.collections())>1">
       <tal:catlist repeat="topic view/collections">
         <li tal:define="title topic/title">
@@ -51,5 +49,11 @@
         </li>
       </tal:catlist>
     </ul>
+
+  </dd>
+  <dd class="portletFooter" tal:condition="view/data/show_more">
+    <a tal:attributes="href view/collection_url" i18n:translate="more_url">
+      More&hellip;
+    </a>
   </dd>
 </dl>
