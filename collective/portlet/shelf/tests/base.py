@@ -44,7 +44,7 @@ class TestCase(ptc.PloneTestCase):
             query = [{
                 'i': 'Type',
                 'o': 'plone.app.querystring.operation.string.is',
-                'v': ['Document', 'Image'],
+                'v': ['Page', 'Image'],
             }]
             collection.setQuery(query)
         except:
