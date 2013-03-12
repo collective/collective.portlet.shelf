@@ -17,6 +17,13 @@
     permission="zope2.View"
     />  
 
+  <browser:page
+    name="portlet_shelf_item_view"
+    for="Products.ATContentTypes.interface.IATNewsItem"
+    template="templates/portlet_news_view.pt"
+    permission="zope2.View"
+    />
+
   <browser:resource
     name="shelf.js"
     file="resources/shelf.js" />
