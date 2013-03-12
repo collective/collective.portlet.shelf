@@ -3,7 +3,6 @@ from zope.interface import implements
 
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
-from zope.app.container.interfaces import INameChooser
 from plone.app.portlets.storage import PortletAssignmentMapping
 from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
 
