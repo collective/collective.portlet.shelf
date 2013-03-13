@@ -26,7 +26,14 @@ class IPortletShelf(base.ICollectionPortlet):
         title=_(u"Page Size"),
         description=_(u"Specify the maximum number of items to show in the "
                       u"one page."),
-        required=False)
+        default=1,
+        required=True)
+
+    height = schema.Int(
+        title=_(u"Page Height"),
+        description=_(u"Specify the height of portlet in pixels."),
+        default=200,
+        required=True)
 
 
 class Assignment(base.Assignment):
@@ -37,9 +44,10 @@ class Assignment(base.Assignment):
     
     show_more = False
     page_size = 1
+    height = 200
     
-    def __init__(self, header=u"", target_collection=None, limit=None,
-                 random=False, show_more=False, show_dates=False, page_size = 1):
+    def __init__(self, header=u"", target_collection=None, limit=0,
+                 random=False, show_more=False, show_dates=False, page_size=1, height=200):
         self.header = header
         self.target_collection = target_collection
         self.limit = limit
@@ -47,6 +55,7 @@ class Assignment(base.Assignment):
         self.show_more = show_more
         self.show_dates = show_dates
         self.page_size = page_size
+        self.height = height
 
     @property
     def title(self):
@@ -86,7 +95,6 @@ class Renderer(base.Renderer):
         collections.append({'id':'main',
                             'title':_('All'),
                             'content':self.results()})
-
         return collections
 
     def widget(self, item):
