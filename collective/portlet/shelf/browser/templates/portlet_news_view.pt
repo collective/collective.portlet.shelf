@@ -6,6 +6,7 @@
                 ">
 
 <img src="" alt=""
+     tal:condition="context/getImage|nothing"
      tal:replace="structure python: path('nocall:context/tag')(scale='thumb', css_class='tileImage')" />
 
 <h2 class="tileHeadline">
