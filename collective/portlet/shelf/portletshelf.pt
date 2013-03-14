@@ -31,6 +31,7 @@
                </tal:block>
             </div>
           </div>
+          <div class="pager"></div>
           <div class="scrollNaviWrapper">
             <a class="prev" title="Previous item"
                i18n:attributes="title label_previous_item"><span i18n:translate="label_previous_item">Previous item</span></a>

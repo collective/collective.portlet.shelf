@@ -48,5 +48,5 @@ jq(document).ready(function () {
         size: 1,
         clickable: false,
         loop: true
-    }).navigator({indexed: true, navi: '.scrollNavi'});
+    }).navigator({indexed: true, navi: '.scrollNavi'}).pager();
 });
