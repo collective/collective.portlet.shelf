@@ -9,8 +9,10 @@
   <dd class="portletItem">
     <tal:carousel repeat="topic view/collections">
        <div tal:attributes="class string: category_section shelfc-${topic/id};
-                            style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')">
-           <div class="shelfScrollable">
+                            style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')"
+            tal:define="height view/data/height">
+           <div class="shelfScrollable" 
+                tal:attributes="style python:'height:%spx;;' % height">
              <div class='items'
                   tal:define="use_view_action site_properties/typesUseViewActionInListings|python:();
                               items topic/content;
@@ -19,7 +21,8 @@
                               batch python:Batch(items, limit, pagerange=len(items));">
                <tal:block tal:repeat="i batch/navlist"
                           tal:condition="items">
-                 <div class="scrollItem visualIEFloatFix">
+                 <div class="scrollItem visualIEFloatFix" 
+                      tal:attributes="style python:'height:%spx;;' % height">
                    <div class="scrollItemPadding" tal:repeat="item python:Batch(items, limit, i*limit-limit)"> 
                      <div tal:replace="structure python: view.widget(item)" />
                    </div>
