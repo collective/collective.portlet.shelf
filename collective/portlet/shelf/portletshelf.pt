@@ -16,6 +16,7 @@
              <div class='items'
                   tal:define="use_view_action site_properties/typesUseViewActionInListings|python:();
                               items topic/content;
+                              items python:list(items);
                               limit view/data/page_size|nothing;
                               limit python:limit or 1;
                               navlist python:range(0,len(items),limit)">
