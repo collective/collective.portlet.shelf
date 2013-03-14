@@ -23,9 +23,8 @@ class IPortletShelf(base.ICollectionPortlet):
 
     """
     page_size = schema.Int(
-        title=_(u"Page Size"),
-        description=_(u"Specify the maximum number of items to show in the "
-                      u"one page."),
+        title=_(u"Number of items"),
+        description=_(u"Enter the number of content items to be displayed."),
         required=False)
 
 
