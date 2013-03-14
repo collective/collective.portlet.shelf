@@ -34,6 +34,12 @@ class IPortletShelf(base.ICollectionPortlet):
         default=200,
         required=True)
 
+    width = schema.Int(
+        title=_(u"Page Width"),
+        description=_(u"Specify the width of portlet in pixels."),
+        default=160,
+        required=True)
+
 
 class Assignment(base.Assignment):
     """Portlet shelf assignment.
@@ -44,9 +50,11 @@ class Assignment(base.Assignment):
     show_more = False
     page_size = 1
     height = 200
+    width = 160
     
     def __init__(self, header=u"", target_collection=None, limit=0,
-                 random=False, show_more=False, show_dates=False, page_size=1, height=200):
+                 random=False, show_more=False, show_dates=False, page_size=1, 
+                 height=200, width=160):
         self.header = header
         self.target_collection = target_collection
         self.limit = limit
@@ -55,6 +63,7 @@ class Assignment(base.Assignment):
         self.show_dates = show_dates
         self.page_size = page_size
         self.height = height
+        self.width = width
 
     @property
     def title(self):
@@ -95,6 +104,10 @@ class Renderer(base.Renderer):
                             'title':_('All'),
                             'content':self.results()})
         return collections
+        
+    def height_and_width_style(self):
+        return "height:%spx;width:%spx;" % (self.data.height, self.data.width)
+
 
     def widget(self, item):
         widget = queryMultiAdapter((item.getObject(), self.request),

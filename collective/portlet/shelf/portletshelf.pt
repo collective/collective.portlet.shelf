@@ -10,9 +10,10 @@
     <tal:carousel repeat="topic view/collections">
        <div tal:attributes="class string: category_section shelfc-${topic/id};
                             style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')"
-            tal:define="height view/data/height">
+            tal:define="height view/data/height;
+                        width view/data/width">
            <div class="shelfScrollable" 
-                tal:attributes="style python:'height:%spx;;' % height">
+                tal:attributes="style view/height_and_width_style">
              <div class='items'
                   tal:define="use_view_action site_properties/typesUseViewActionInListings|python:();
                               items topic/content;
@@ -24,7 +25,8 @@
                           tal:condition="items">
                  <div class="scrollItem visualIEFloatFix" 
                       tal:attributes="style python:'height:%spx;;' % height">
-                   <div class="shelfItem scrollItemPadding" tal:repeat="item python:items[i:i+limit]">
+                   <div class="shelfItem scrollItemPadding" tal:repeat="item python:items[i:i+limit]"
+                      tal:attributes="style python:'width:%spx;;' % width">
                      <div tal:replace="structure python: view.widget(item)" />
                    </div>
                    <div class="visualClear"></div>
