@@ -36,12 +36,12 @@
           </div>
           <div class="pager"></div>
           <div class="scrollNaviWrapper">
+            <span class="scrollNavi"><!-- --></span>
             <a class="prev" title="Previous item"
                i18n:attributes="title label_previous_item"><span i18n:translate="label_previous_item">Previous item</span></a>
             <a class="next" title="Next item"
                i18n:attributes="title label_next_item"><span i18n:translate="label_next_item">Next item</span></a>
             <!-- wrapper for navigator elements --> 
-            <div class="scrollNavi"><!-- --></div>
           </div>
         </div>
     </tal:carousel>
