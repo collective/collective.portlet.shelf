@@ -12,8 +12,8 @@
                             style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')"
             tal:define="height view/data/height;
                         width view/data/width">
-           <div class="shelfScrollable" 
-                tal:attributes="style view/height_and_width_style">
+           <div class="shelfScrollable"
+                tal:attributes="style python:'height:%spx;;' % height">
              <div class='items'
                   tal:define="use_view_action site_properties/typesUseViewActionInListings|python:();
                               items topic/content;
