@@ -24,6 +24,11 @@
     permission="zope2.View"
     />
 
+  <!-- Register resources -->
+  <browser:resource
+    name="shelf.css"
+    file="resources/shelf.css" />
+
   <browser:resource
     name="shelf.js"
     file="resources/shelf.js" />

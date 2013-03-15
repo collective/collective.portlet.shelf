@@ -1,12 +1,8 @@
-/* Main stylesheet for collective.carousel */
-/* <dtml-with shelf> (do not remove this :) */
-/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
-
 dl.portletShelfWrapper dd.portletItem {
   padding: 0;
   }
 .shelfScrollable {
-  height: &dtml-itemDefaultHeight;;
+  /*height: &dtml-itemDefaultHeight;;*/
   overflow: hidden;
   position: relative;
   }
@@ -23,7 +19,7 @@ dl.portletShelfWrapper dd.portletItem {
    Typically, this element is the one that *you* will style the most. */
 .shelfScrollable .scrollItem {
   float: left;
-  height: &dtml-itemDefaultHeight;;
+  /*height: &dtml-itemDefaultHeight;;*/
   }
 
 /* Visual padding for a single item in a carousel. 
@@ -32,7 +28,7 @@ dl.portletShelfWrapper dd.portletItem {
 .shelfScrollable .scrollItemPadding {
   float: left;
   margin: 1em;
-  width: &dtml-itemWidth;;
+  /*width: &dtml-itemWidth;;*/
   }
 .shelfScrollable .tileFooter {
   background: #fff;
@@ -47,7 +43,7 @@ dl.portletShelfWrapper dd.portletItem {
   margin: 0;
   padding: 0.75em 0 0.5em;
   position: absolute;
-  width: &dtml-itemWidth;; 
+  /*width: &dtml-itemWidth;; */
   }
 
 /* Styles for links navigation 'PREV' and 'NEXT' */
@@ -97,5 +93,3 @@ dl.portletShelfWrapper dd.portletItem {
   display: inline-block;
   margin: 0.5em 0 0.5em 1em;
   }
-
-/* </dtml-with> */

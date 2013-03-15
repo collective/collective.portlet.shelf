@@ -10,7 +10,6 @@
     <five:registerPackage package="." initialize=".initialize" />
     <include package=".browser" />
     <i18n:registerTranslations directory="locales" />
-    <cmf:registerDirectory name="portlet_shelf"/>
 
     <genericsetup:registerProfile
       name="default"

@@ -2,8 +2,7 @@
 <object name="portal_css">
 
  <stylesheet title="Portlet shelf style sheet"
-    id="shelf.css"
-    media="all" rel="stylesheet" rendering="import"
+    id="++resource++shelf.css" media="all" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/>
 
