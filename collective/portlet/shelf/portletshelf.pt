@@ -11,7 +11,7 @@
        <div tal:attributes="class string: category_section shelfc-${topic/id};
                             style python:'display:%s' % (topic['id'] == 'main' and 'block;;' or 'none;;')"
             tal:define="height string:height:${view/data/height}px;
-                        width string:width:${view/data/width}px;">
+                        itemstyle string:width:${view/data/width}px;;height:${view/data/height}px;">
            <div class="shelfScrollable"
                 tal:attributes="style height">
              <div class='items'
@@ -27,7 +27,7 @@
                       tal:attributes="style height">
                    <div class="shelfItem scrollItemPadding"
                         tal:repeat="item python:items[i:i+limit]"
-                        tal:attributes="style width">
+                        tal:attributes="style itemstyle">
                      <div tal:replace="structure python: view.widget(item)" />
                    </div>
                    <div class="visualClear"></div>
