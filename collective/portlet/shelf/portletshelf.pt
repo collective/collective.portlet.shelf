@@ -23,8 +23,7 @@
                               navlist python:range(0,len(items),limit)">
                <tal:block tal:repeat="i navlist"
                           tal:condition="items">
-                 <div class="scrollItem visualIEFloatFix" 
-                      tal:attributes="style height">
+                 <div class="scrollItem visualIEFloatFix">
                    <div class="shelfItem scrollItemPadding"
                         tal:repeat="item python:items[i:i+limit]"
                         tal:attributes="style itemstyle">
