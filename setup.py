@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1'
+version = '1.2'
 
 setup(name='collective.portlet.shelf',
       version=version,
@@ -15,6 +15,8 @@ setup(name='collective.portlet.shelf',
         "Framework :: Plone",
         "Framework :: Plone :: 4.0",
         "Framework :: Plone :: 4.1",
+        "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
         "Programming Language :: Python",
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -25,8 +27,8 @@ setup(name='collective.portlet.shelf',
         "License :: OSI Approved :: GNU General Public License (GPL)",
         ],
       keywords='plone portlet shelf',
-      author='Melnychuk Taras',
-      author_email='fenix@quintagroup.com',
+      author='Quintagroup',
+      author_email='support@quintagroup.com',
       url='https://github.com/collective/collective.portlet.shelf',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
