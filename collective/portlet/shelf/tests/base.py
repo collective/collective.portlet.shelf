@@ -6,6 +6,7 @@ from Testing import ZopeTestCase as ztc
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
+
 @onsetup
 def setup_product():
     """Set up additional products and ZCML required to test this product.
@@ -33,6 +34,7 @@ def setup_product():
 setup_product()
 ptc.setupPloneSite(products=['collective.portlet.shelf'])
 
+
 class TestCase(ptc.PloneTestCase):
     """Base class used for test cases
     """
@@ -50,14 +52,16 @@ class TestCase(ptc.PloneTestCase):
         except:
             self.folder.invokeFactory('Topic', 'collection')
             collection = getattr(self.folder, 'collection')
-            crit = self.folder.collection.addCriterion('portal_type', 'ATSimpleStringCriterion')
+            crit = self.folder.collection.addCriterion(
+                'portal_type', 'ATSimpleStringCriterion')
             crit.setValue(['Document', 'Image'])
 
         # add  some objects
         self.folder.invokeFactory('Document', 'test_document')
         self.folder.test_document.reindexObject()
-        self.folder.invokeFactory('Image', 'test_image')          
+        self.folder.invokeFactory('Image', 'test_image')
         self.folder.test_image.reindexObject()
+
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
     """Test case class used for functional (doc-)tests

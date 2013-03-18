@@ -20,19 +20,19 @@ class TestPortlet(TestCase):
 
     def test_adapters(self):
         zcml.load_config('tests/testing.zcml', collective.portlet.shelf)
-        
-        #test default view
+
+        # test default view
         document = getattr(self.folder, 'test_document')
         widget = queryMultiAdapter((document, self.app.REQUEST),
-                                    name="portlet_shelf_item_view")
+                                   name="portlet_shelf_item_view")
         self.failUnless('Default view' in widget(), document)
-        
-        #test image view
+
+        # test image view
         image = getattr(self.folder, 'test_image')
-        widget = queryMultiAdapter((image, self.app.REQUEST), 
-                                  name="portlet_shelf_item_view")
+        widget = queryMultiAdapter((image, self.app.REQUEST),
+                                   name="portlet_shelf_item_view")
         self.failUnless('Image view' in widget(), image)
-        
+
     def test_portlet_type_registered(self):
         portlet = getUtility(
             IPortletType,
@@ -55,8 +55,8 @@ class TestPortlet(TestCase):
             del mapping[m]
         addview = mapping.restrictedTraverse('+/' + portlet.addview)
 
-        addview.createAndAdd(data={'header':'shelf',
-                                   'target_collection':'collection'})
+        addview.createAndAdd(data={'header': 'shelf',
+                                   'target_collection': 'collection'})
 
         self.assertEquals(len(mapping), 1)
         self.failUnless(isinstance(mapping.values()[0],
@@ -97,22 +97,22 @@ class TestRenderer(TestCase):
                                IPortletRenderer)
 
     def test_render(self):
-        #zcml.load_config('tests/testing.zcml', collective.portlet.shelf)
+        # zcml.load_config('tests/testing.zcml', collective.portlet.shelf)
         r = self.renderer(context=self.portal,
                           assignment=portletshelf.Assignment(header='shelf',
                           target_collection='/'.join(self.folder.collection.getPhysicalPath()[2:])))
         r = r.__of__(self.folder)
         r.update()
         output = r.render()
-        self.failUnless('test_document' in output, 
-            "Default view content is missing in portlet renderer output.")
+        self.failUnless('test_document' in output,
+                        "Default view content is missing in portlet renderer output.")
         self.failUnless('test_image' in output,
-            "Image view content is missing in portlet renderer output.")
+                        "Image view content is missing in portlet renderer output.")
 
 
 def test_suite():
     from unittest import TestSuite, makeSuite
     suite = TestSuite()
     suite.addTest(makeSuite(TestPortlet))
-    #suite.addTest(makeSuite(TestRenderer))
+    # suite.addTest(makeSuite(TestRenderer))
     return suite
