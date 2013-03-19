@@ -29,11 +29,11 @@ Headnet company http://headnet.dk/.
 Supported Plone Version
 -----------------------
 
-Plone 4.0
+Plone 4+
 
 Links
 -----
 
-* SVN Repository -  http://svn.plone.org/svn/collective/collective.portlet.shelf
+* Repository -  https://github.com/collective/collective.portlet.shelf
 * Documentation -  http://projects.quintagroup.com/products/wiki/collective.portlet.shelf
 
