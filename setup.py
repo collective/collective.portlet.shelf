@@ -5,8 +5,9 @@ version = '1.2'
 
 setup(name='collective.portlet.shelf',
       version=version,
-      description="collective.portlet.shelf is a portlet for Plone 4 that allows to display 
-Collection's results in a carousel portlet browsing them by subcollections.",
+      description="collective.portlet.shelf is a portlet for Plone 4 "
+          "that allows to display Collection's results in a carousel "
+          "portlet browsing them by subcollections.",
       long_description=open("README.txt").read() + "\n" +
       open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
