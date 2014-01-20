@@ -36,6 +36,21 @@
     />
   </configure>
 
+  <configure zcml:condition="installed plone.app.contenttypes">
+  <browser:page
+    name="portlet_shelf_item_view"
+    for="plone.app.contenttypes.interfaces.IImage"
+    template="templates/portlet_image_view_dx.pt"
+    permission="zope2.View"
+    />
+  <browser:page
+    name="portlet_shelf_item_view"
+    for="plone.app.contenttypes.interfaces.INewsItem"
+    template="templates/portlet_news_view_dx.pt"
+    permission="zope2.View"
+    />
+  </configure>
+
   <!-- Register resources -->
   <browser:resource
     name="shelf.css"

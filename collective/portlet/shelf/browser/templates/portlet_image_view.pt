@@ -3,9 +3,8 @@
                    size context/size;
                    use_view_action site_properties/typesUseViewActionInListings|python:();
                    item_title context/Title">
-                
   <a href="#"
-     tal:attributes="href python:(item_type in use_view_action) and item_url+'/view' or item_url;">
+     tal:attributes="href python:(item_type in use_view_action) and item_url+'/view' or item_url; title item_title">
     <img src="" alt=""
          tal:condition="size"
          tal:replace="structure python: context.tag(scale='thumb', css_class='tileImage')" />

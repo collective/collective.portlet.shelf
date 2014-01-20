@@ -1,0 +1,12 @@
+<tal:block define="item_url context/absolute_url;
+                   item_type context/portal_type;
+                   size context/image/getSize;
+                   item_title context/Title">
+  <a href="#"
+     tal:define="scale context/@@images;
+                 img_tag python:scale.scale('image', scale='thumb').tag(css_class='tileImage')"
+     tal:attributes="href string:${item_url}/view; title item_title"
+     tal:on-error="string: Image cannot be displayed">
+    <img tal:condition="size" tal:replace="structure img_tag" />
+  </a>
+</tal:block>

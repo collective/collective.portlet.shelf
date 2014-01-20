@@ -5,7 +5,7 @@ Changelog
 ----------------
 
 * fixed compatibility with Plone 4.3+ [kroman0]
-* added support dexterity content types [kroman0]
+* added support dexterity content types (plone.app.contenttypes) [kroman0]
 
 1.2 (2013-03-18)
 ----------------
