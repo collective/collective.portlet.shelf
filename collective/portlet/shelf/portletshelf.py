@@ -1,9 +1,5 @@
-import binascii
 from zope.interface import implements
 
-from plone.portlets.interfaces import IPortletDataProvider
-from plone.app.portlets.portlets import base
-from plone.app.portlets.storage import PortletAssignmentMapping
 from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
 
 from zope import schema
