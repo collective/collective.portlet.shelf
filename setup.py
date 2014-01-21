@@ -8,8 +8,8 @@ setup(name='collective.portlet.shelf',
       description="collective.portlet.shelf is a portlet for Plone 4 "
           "that allows to display Collection's results in a carousel "
           "portlet browsing them by subcollections.",
-      long_description=open("README.txt").read() + "\n" +
-      open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+      open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
       # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
